@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "948071702081",
+    "firebase_url": "https://travelix-4ea9d-default-rtdb.firebaseio.com",
+    "project_id": "travelix-4ea9d",
+    "storage_bucket": "travelix-4ea9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948071702081:android:53028d22cedd46019cf0c0",
+        "android_client_info": {
+          "package_name": "com.example.travelix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948071702081-o4vjl1h5a76fcinl9ke3aeolsr2tejh2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDajGiOjefRFX_XzGXcfeaJCYIKN5wjW34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "948071702081-o4vjl1h5a76fcinl9ke3aeolsr2tejh2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Booking Confirmation</title>
+	<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+
+
+<body ng-app="validationApp" ng-controller="mainController">
+
+  <header class="header">
+    <div class="container">
+        <nav>
+            <a href="index.html"><img src="images/logo.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="hotel.html">Hotel</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <!-- <nav class="nav">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="" class="logo-image">
+            </a>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars open-state"></i>
+                <i class="fas fa-times close-state"></i>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="hotel.html" class="nav-link">Hotel</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav> -->
+    </div>
+</header>
+
+<div class="wrapper">
+    <div class="title">Booking Page</div>
+    <form class="form" name="bookingForm" id="bookingForm" ng-submit="submitForm(bookingForm.$valid)" action="" novalidate>
+       <div class="inputfield">
+          <label>Guest Name</label>
+          <input class="input" ng-model="user.name" type="text" class="form-control" id="name" name="name" required="true">
+          <small ng-show="bookingForm.name.$invalid && bookingForm.name.$touched" class="help-block text-danger">Guest name must be filled</small>
+       </div> 
+       <div class="inputfield">
+        <label>Phone Number</label>
+        <input type="text" class="input" data-mask="000000000000" ng-model="user.phone" id="phone" name="phone" required="true">
+        <small ng-show="bookingForm.phone.$invalid && bookingForm.phone.$touched" class="help-block text-danger">
+          Guest phone must be filled
+      </small>
+       </div>
+       <div class="inputfield">
+        <label>Email Address</label>
+        <input ng-model="user.email" id="email" name="email" type="email" class="input" required class="input">
+        <small ng-show="bookingForm.email.$invalid && bookingForm.email.$touched">Guest email must be filled</small>
+       </div>
+       <div class="inputfield">
+        <label>Type of Trip</label>
+        <div class="custom_select">
+          <select>
+            <option value="" disabled selected>Select</option>
+            <option value="business">Business</option>
+            <option value="vacation">Vacation</option>
+          </select>
+        </div> 
+        </div> 
+        <div class="inputfield">
+          <input type="submit" value="Book" class="btn">
+        </div>
+    </form>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-content-brand">
+                <a href="index.html" class="logo">
+                    <img class=logo-image src="images/logo.png" alt="">
+                </a>
+                <div class="paragraph">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis autem velit ea ratione fugiat asperiores iste incidunt provident nemo nesciunt? Ipsam soluta error delectus ex fugit nihil, nostrum quo ut.
+                </div>
+            </div>
+            <div class="social-media-wrap">
+                <h4 class="footer-heading">Follow Us</h4>
+                <div class="social-media">
+                    <a href="#" class="sm-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="sm-link"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" class="sm-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="sm-link"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" class="sm-link"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="navbar.js">s</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+  var validationApp = angular.module('validationApp', []);
+  validationApp.controller('mainController', function ($scope) {
+      $scope.submitForm = function (isValid) {
+          if (isValid) {
+              alert($scope.user.name + ' Thanks for creating an account!');
+          }
+          else {
+              alert('Data Gagal Disimpan');
+          }
+      };
+  });
+  </script>
+	
+</body>
+</html>

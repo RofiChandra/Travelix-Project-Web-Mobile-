@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Travelix</string>
+
+    <string-array name="room_type">
+        <item>Room Type</item>
+        <item>Classic Room</item>
+        <item>Deluxe Room</item>
+        <item>Premium Deluxe Room</item>
+        <item>Club Intercontinental Room</item>
+    </string-array>
+
+    <string-array name="trip_type">
+        <item>Trip Type</item>
+        <item>Vacation</item>
+        <item>Business</item>
+    </string-array>
+</resources>

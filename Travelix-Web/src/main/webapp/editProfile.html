@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="css/editProfile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <nav>
+                    <a href="../index.html"><img src="../webapp/images/logo.png"></a>
+                    <div class="nav-links" id="navLinks">
+                        <i class="fa fa-times" onclick="hideMenu()"></i>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                        <li><a href="kamar.html">Rooms</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="biodata.html">Profile</a></li>
+                        <li><a href="login2.html" onclick="signOut()">Sign Out</a></li>
+                        </ul>
+                    </div>
+                    <i class="fa fa-bars" onclick="showMenu()"></i>
+                </nav>
+            </div>
+        </header>
+        <div class="wrapper">
+        <div class="title">Profile</div>
+            <form class="form" name="profileForm" id="profileForm" action="biodata.html">            
+                <div class="inputfield">
+                    <label for="fullName">Full Name</label>
+                    <input class="input-arsy" type="text" class="form-control" id="profile_fullName" name="name" ><br>
+                </div>
+                <div class="inputfield">
+                    <label for="email">Email Address</label>
+                    <input id="profile_email" name="email" type="email" class="input-arsy" class="input" ><br>
+                </div>
+                <div class="inputfield">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="number" class="input-arsy" data-mask="000000000000" id="profile_phoneNumber" name="phone" ><br>
+                </div>
+                <!-- <div class="inputfield">
+                    <label for="address">Address</label>
+                    <input id="profile_address" name="address" type="text" class="input-arsy" class="input" ><br>
+                </div> -->
+                <div class="inputfield">
+                    <input id="updateButton" type="submit" value="Update" onclick="updateProfile()" class="btn-arsy">
+                </div>
+                <div class="inputfield">
+                    <input id="cancel" type="button" value="Cancel" onclick="window.location.href='biodata.html'" class="btn-cancel">
+                </div>
+            </form>
+        </div>
+    </body>
+    
+    <script src="main.js"></script>
+    <script src="navbar.js">s</script>
+    <script src="js/user.js"></script>
+</html>

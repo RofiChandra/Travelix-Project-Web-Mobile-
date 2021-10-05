@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Room.RoomPremiumDeluxe"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/room_premium"
+            android:scaleType="fitXY" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Premium Deluxe Room"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            android:textColor="@color/travelix_purple"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp 1.200.000,00"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 King Size Bed"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginLeft="25dp"/>
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:drawableLeft="@drawable/ic_wifi"
+                android:drawablePadding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Free Wi-Fi"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:textColor="@color/travelix_purple"
+                android:layout_marginLeft="25dp"/>
+
+            <TextView
+                android:drawableLeft="@drawable/ic_guest"
+                android:drawablePadding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 Guest"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:textColor="@color/travelix_purple"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:drawableLeft="@drawable/ic_money"
+                android:drawablePadding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Refundable"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:textColor="@color/travelix_purple"
+                android:layout_marginLeft="25dp"/>
+
+            <TextView
+                android:drawableLeft="@drawable/ic_date"
+                android:drawablePadding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reschedulable"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:textColor="@color/travelix_purple"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:drawableLeft="@drawable/ic_freebreak"
+                android:drawablePadding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Free Breakfast"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:textColor="@color/travelix_purple"
+                android:layout_marginLeft="25dp"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/btn_bookPremium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="Book"
+                android:background="@drawable/custom_button"
+                android:layout_alignParentBottom="true"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

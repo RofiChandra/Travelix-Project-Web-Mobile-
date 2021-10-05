@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/logo.png">
+    <title>Travelix</title>
+    <!--Font awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav>
+                <a href="index.html"><img src="images/logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="kamar.html">Rooms</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="biodata.html">Profile</a></li>
+                        <li><a href="login2.html" onclick="signOut()">Sign Out</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <!-- <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="" class="logo-image">
+                </a>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars open-state"></i>
+                    <i class="fas fa-times close-state"></i>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="hotel.html" class="nav-link">Hotel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav> -->
+        </div>
+    </header>
+
+    <main>
+        <h5 class="section-head">
+            <span class="heading">About Us!</span>
+        </h5>
+        <div class="about">
+            Travelix is a Third-party hotel booking site created by Rofi Chandra & Muhammad Arsy Fahrezi. The goals of Travelix is to offer customer with the best hotel deals, with many hotel variation in town Travelix hopefuly able to help customer to choose the perfect hotel to customer preferences and budget.
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-content-brand">
+                    <a href="index.html" class="logo">
+                        <img class=logo-image src="images/logo.png" alt="">
+                    </a>
+                    <div class="paragraph">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis autem velit ea ratione fugiat asperiores iste incidunt provident nemo nesciunt? Ipsam soluta error delectus ex fugit nihil, nostrum quo ut.
+                    </div>
+                </div>
+                <div class="social-media-wrap">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-media">
+                        <a href="#" class="sm-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+    <script src="navbar.js">s</script>
+</body>
+</html>

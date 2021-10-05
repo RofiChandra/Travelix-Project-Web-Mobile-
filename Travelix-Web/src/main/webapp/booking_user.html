@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>CRUD Firebase</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+ <link rel="stylesheet" type="text/css" href="kamar.css">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ <script type="text/javascript">
+ 
+
+var firebaseConfig = {
+    apiKey: "AIzaSyDJit-hZvXbfFyTjSRTOWWyIH0mHcRpwQw",
+    authDomain: "contohlogin-e9e74.firebaseapp.com",
+    databaseURL: "https://contohlogin-e9e74-default-rtdb.firebaseio.com",
+    projectId: "contohlogin-e9e74",
+    storageBucket: "contohlogin-e9e74.appspot.com",
+    messagingSenderId: "581250683251",
+    appId: "1:581250683251:web:1454bd7c5412d9ee57b506",
+    measurementId: "G-JGKHDL51LY"
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // firebase.analytics();
+
+ </script>
+</head>
+<body>
+  
+<div class="container">
+ <h1>Booking List</h1>
+ <button class="btn btn-primary btnTambahData" data-toggle="modal" onclick="cleardata()" data-target="#exampleModal">Add Data</button>
+ <a href="login-admin.html">LogOut</a>
+ <table class="table table-striped" id="tbl_list_user">
+  <thead>
+   <tr>
+    <th scope="col">No.</th>
+    <th scope="col">GuestName</th>
+    <th scope="col">GuestEmail</th>    
+    <th scope="col">GuestPhone</th>
+    <th scope="col">Type of Room</th>
+    <th scope="col">CheckIn</th>
+    <th scope="col">CheckOut</th>
+    <th scope="col">Trip of Type</th>
+    <th scope="col"></th>
+   </tr>
+  </thead>
+ </table>
+
+
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+   <div class="modal-content">
+    <div class="modal-header">
+     <h5 class="modal-title" id="exampleModalLabel"></h5>
+     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+     </button>
+    </div>
+    <form action="" method="POST" enctype="multipart/form-data">
+      <div class="modal-body">     
+        <input type="hidden" name="id" id="id">
+        <div class="form-group">
+         <label for="guestName">Full Name</label>
+         <input type="text" name="guestName" id="guestName" class="form-control" placeholder="Insert Full Name" required="true">
+        </div>
+        <div class="form-group">
+         <label for="guestEmail">Email</label>
+         <input type="email" name="guestEmail" id="guestEmail" class="form-control" placeholder="Insert Email Address" required="true">
+        </div>
+        <div class="form-group">
+         <label for="guestPhone">Phone Number</label>
+         <input type="number" name="guestPhone" id="guestPhone" class="form-control" placeholder="Insert Phone Number" required="true">
+        </div>
+        <div class="form-group">
+          <label for="roomType">Room Type</label>        
+          <div class="input-group mb-3">
+            <select class="custom-select" id="roomType">
+              <option value="" disabled selected>Choose Type of Room</option>
+              <option value="Classic">Classic</option>
+                  <option value="Deluxe">Deluxe</option>
+                  <option value="Premium">Premium</option>
+                  <option value="Club Intercontinental">Club Intercontinental</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="checkIn">Check In</label>
+          <input type="date" name="checkIn" id="checkIn" class="form-control" required="true">
+        </div>
+        <div class="form-group">
+          <label for="checkOut">Check Out</label>
+          <input type="date" name="checkOut" id="checkOut" class="form-control" required="true">
+        </div>
+        <div class="form-group">
+          <label for="tripType">Room Type</label>        
+          <div class="input-group mb-3">
+            <select class="custom-select" id="tripType">
+              <option value="" disabled selected>Choose Type of Trip</option>
+                <option value="business">Business</option>
+                <option value="vacation">Vacation</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" onclick="addBook()" class="btn btn-primary"  data-dismiss="modal">Book</button>
+       </div>
+      </form>
+   </div>
+  </div>
+ </div>
+</div>
+ <!-- <script src="js/jquery.js"></script>     -->
+
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ <script src="js/jquery.easing.1.3.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+<script src="navbar.js"></script>
+<script>
+    db = firebase.database().ref("Booking");
+    var roomType = document.getElementById('roomType').value;
+    var guestName = document.getElementById('guestName').value;
+    var guestPhone = document.getElementById('guestPhone').value;
+    var guestEmail = document.getElementById('guestEmail').value;
+    var checkIn = document.getElementById('checkIn').value;
+    var checkOut = document.getElementById('checkOut').value;
+    var tripType = document.getElementById('tripType').value;
+
+    function addBook() {    
+    bookID = db.push().key
+    db.child(bookID).set({
+      guestName: $('#guestName').val(),
+      guestEmail   : $('#guestEmail').val(),
+      guestPhone : $('#guestPhone').val(),
+      roomType : $('#roomType').val(),
+      checkIn: $('#checkIn').val(),
+      checkOut   : $('#checkOut').val(),
+      tripType : $('#tripType').val()
+    });
+    alert("Booking Success!")
+  }
+
+  function cleardata(){
+    $('#id').val("");
+    $('#guestName').val("");
+    $('#guestEmail').val("");
+    $('#guestPhone').val("");
+    $('#roomType').val("");
+    $('#checkIn').val("");
+    $('#checkOut').val("");
+    $('#tripType').val("");
+  }
+
+  function hapusData(id){
+   var answer = confirm("Cancel Booking...?");
+   if (answer) {
+       database.ref('Booking/' + id).remove();
+       alert("Your Booking was Canceled");
+   }
+  }
+
+  db.on('value', function(snapshot) {
+   var count = 0;
+   if(snapshot.exists()){
+    $("#tbl_list_user tbody").remove(); 
+    var content = '<tbody>';
+    snapshot.forEach(function(data) {
+     count+=1;
+     var val = data.val();
+                 content +='<tr>';
+                 content += '<td>' + count + '</td>';
+                 content += '<td>' + val.guestName + '</td>';
+                 content += '<td>' + val.guestEmail + '</td>';
+                 content += '<td>' + val.guestPhone + '</td>';
+                 content += '<td>' + val.roomType + '</td>';
+                 content += '<td>' + val.checkIn + '</td>';
+                 content += '<td>' + val.checkOut + '</td>';
+                 content += '<td>' + val.tripType + '</td>';
+                 content += '<td> <button class="btn btn-danger" onclick="hapusData(' + data.key + ')"> Cancel Book </button> <button class="btn btn-primary tampilModalUbah" onclick="setData('+ data.key +')" data-toggle="modal" data-target="#exampleModal">Edit Book</button>  </td>';
+                 content +='</tr>';
+    //              key = 0;
+    //  key = parseInt(data.key, 10);
+    //  key = key + 1;
+    });
+
+    content += '</tbody>';
+    $('#tbl_list_user').append(content);
+   }else{
+    $("#tbl_list_user tbody").remove(); 
+   }  
+  });
+
+  function setData(id){
+   $('#exampleModalLabel').html('Change Booking');   
+   database.ref('Books/').child(id).once('value').then( function(snap) {
+       const user = snap.val()
+       $('#id').val(id);
+       $('#guestName').val(user.guestName);
+    $('#guestEmail').val(user.guestEmail);
+    $('#guestPhone').val(user.guestPhone);
+    $('#roomType').val(user.roomType);
+    $('#checkIn').val(user.checkIn);
+    $('#checkOut').val(user.checkOut);
+    $('#tripType').val(user.tripType);
+   });
+  }
+
+</script>
+
+
+ <!-- <script type="text/javascript">
+  var database = firebase.database();
+  var key = database.ref("Books").push().key;
+
+  database.ref("Books").orderByKey().limitToLast(1).on('child_added',function(data) {
+  //  key = parseInt(data.key, 10);
+  //  key = key + 1;
+  });
+
+  database.ref('Books').on('value', function(snapshot) {
+   var count = 0;
+   if(snapshot.exists()){
+    $("#tbl_list_user tbody").remove(); 
+    var content = '<tbody>';
+    snapshot.forEach(function(data) {
+     count+=1;
+     var val = data.val();
+                 content +='<tr>';
+                 content += '<td>' + count + '</td>';
+                 content += '<td>' + val.guestName + '</td>';
+                 content += '<td>' + val.guestEmail + '</td>';
+                 content += '<td>' + val.guestPhone + '</td>';
+                 content += '<td>' + val.roomType + '</td>';
+                 content += '<td>' + val.checkIn + '</td>';
+                 content += '<td>' + val.checkOut + '</td>';
+                 content += '<td>' + val.tripType + '</td>';
+                 content += '<td> <button class="btn btn-danger" onclick="hapusData(' + data.key + ')"> Cancel Book </button> <button class="btn btn-primary tampilModalUbah" onclick="setData('+ data.key +')" data-toggle="modal" data-target="#exampleModal">Edit Book</button>  </td>';
+                 content +='</tr>';
+    //              key = 0;
+    //  key = parseInt(data.key, 10);
+    //  key = key + 1;
+    });
+
+    content += '</tbody>';
+    $('#tbl_list_user').append(content);
+   }else{
+    $("#tbl_list_user tbody").remove(); 
+   }  
+  });
+
+
+  function tambahData(){
+   if($('#exampleModalLabel').text() == "Add New Booking"){
+    // if(key == 0){
+    //  key = 1;
+    // }
+
+    database.ref('Books/').child(key).set({
+      guestName: $('#guestName').val(),
+     guestEmail   : $('#guestEmail').val(),
+     guestPhone : $('#guestPhone').val(),
+     roomType : $('#roomType').val(),
+     checkIn: $('#checkIn').val(),
+     checkOut   : $('#checkOut').val(),
+     tripType : $('#tripType').val()
+    });
+
+    alert("Data Berhasil ditambah");
+   }else if($('#exampleModalLabel').text() == "Change Booking"){
+    database.ref('Books/' + $('#id').val()).update({
+      guestName: $('#guestName').val(),
+      guestEmail   : $('#guestEmail').val(),
+      guestPhone : $('#guestPhone').val(),
+      roomType : $('#roomType').val(),
+      checkIn: $('#checkIn').val(),
+      checkOut   : $('#checkOut').val(),
+      tripType : $('#tripType').val()
+    });
+    alert("Data Berhasil diupdate");
+   }
+  } 
+
+
+  function cleardata(){
+    $('#id').val("");
+    $('#guestName').val("");
+    $('#guestEmail').val("");
+    $('#guestPhone').val("");
+    $('#roomType').val("");
+    $('#checkIn').val("");
+    $('#checkOut').val("");
+    $('#tripType').val("");
+  }
+
+
+  function setData(id){
+   $('#exampleModalLabel').html('Change Booking');   
+   database.ref('Books/').child(id).once('value').then( function(snap) {
+       const user = snap.val()
+       $('#id').val(id);
+       $('#guestName').val(user.guestName);
+    $('#guestEmail').val(user.guestEmail);
+    $('#guestPhone').val(user.guestPhone);
+    $('#roomType').val(user.roomType);
+    $('#checkIn').val(user.checkIn);
+    $('#checkOut').val(user.checkOut);
+    $('#tripType').val(user.tripType);
+   });
+  }
+
+
+  function hapusData(id){
+   var answer = confirm("Cancel Booking...?");
+   if (answer) {
+       database.ref('Books/' + id).remove();
+       alert("Your Booking was Canceled");
+   }
+  } 
+
+$('.btnTambahData').on('click', function(){
+        $('#exampleModalLabel').html('Add New Booking');
+    });
+
+ </script> -->
+</body>
+<script src="navbar.js"></script>
+</html>

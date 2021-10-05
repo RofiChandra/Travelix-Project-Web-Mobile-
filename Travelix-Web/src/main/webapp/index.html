@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/logo.png">
+    <title>Travelix</title>
+    <!--Font awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav>
+                <a href="index.html"><img src="images/logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="kamar.html">Rooms</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="biodata.html">Profile</a></li>
+                        <li><a href="login2.html" onclick="signOut()">Sign Out</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <!-- <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="" class="logo-image">
+                </a>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars open-state"></i>
+                    <i class="fas fa-times close-state"></i>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="hotel.html" class="nav-link">Hotel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav> -->
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="container">
+                <div class="main-heading">
+                    <h1 class="title">Discover</h1>
+                    <h2 class="subtitle">Luxury Rooms</h2>
+                </div>
+                <a href="kamar.html" class="btn btn-gradient">Explore Now
+                    <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                </a>
+            </div>
+        </div>
+        <!-- <section class="room">
+            <div class="container">
+                <h5 class="section-head">
+                    <span class="heading">Luxurious</span>
+                    <span class="sub-heading">Affordable Rooms</span>
+                </h5>
+                <div class="grid rooms-grid">
+                    <div class="grid-item featured-rooms">
+                        <div class="image-wrap">
+                            <img class="room-image" src="./images/room_1.jpg" alt="">
+                            <h5 class="room-name">Astro Hotel</h5>
+                        </div>
+                        <div class="room-info-wrap">
+                            <span class="room-price">$200 <span class="per-night">Per Night</span></span>
+                            <p class="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi harum repudiandae deserunt molestias fuga sapiente.</p>
+                            <a href="#" class="btn rooms-btn">Book Now &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="grid-item featured-rooms">
+                        <div class="image-wrap">
+                            <img class="room-image" src="./images/room_2.jpg" alt="">
+                            <h5 class="room-name">Astro Hotel</h5>
+                        </div>
+                        <div class="room-info-wrap">
+                            <span class="room-price">$200 <span class="per-night">Per Night</span></span>
+                            <p class="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi harum repudiandae deserunt molestias fuga sapiente.</p>
+                            <a href="#" class="btn rooms-btn">Book Now &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="grid-item featured-rooms">
+                        <div class="image-wrap">
+                            <img class="room-image" src="./images/room_3.jpg" alt="">
+                            <h5 class="room-name">Astro Hotel</h5>
+                        </div>
+                        <div class="room-info-wrap">
+                            <span class="room-price">$200 <span class="per-night">Per Night</span></span>
+                            <p class="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi harum repudiandae deserunt molestias fuga sapiente.</p>
+                            <a href="#" class="btn rooms-btn">Book Now &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="grid-item featured-rooms">
+                        <div class="image-wrap">
+                            <img class="room-image" src="./images/room_4.jpg" alt="">
+                            <h5 class="room-name">Astro Hotel</h5>
+                        </div>
+                        <div class="room-info-wrap">
+                            <span class="room-price">$200 <span class="per-night">Per Night</span></span>
+                            <p class="paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi harum repudiandae deserunt molestias fuga sapiente.</p>
+                            <a href="#" class="btn rooms-btn">Book Now &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        
+        
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-content-brand">
+                    <a href="index.html" class="logo">
+                        <img class=logo-image src="images/logo.png" alt="">
+                    </a>
+                    <div class="paragraph">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis autem velit ea ratione fugiat asperiores iste incidunt provident nemo nesciunt? Ipsam soluta error delectus ex fugit nihil, nostrum quo ut.
+                    </div>
+                </div>
+                <div class="social-media-wrap">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-media">
+                        <a href="#" class="sm-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+    <script src="navbar.js">s</script>
+    <script src="login2.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if(!user) {
+                window.location.href = "login2.html";
+            }
+        })
+    </script>
+</body>
+</html>

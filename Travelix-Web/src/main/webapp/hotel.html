@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/logo.png">
+    <title>Travelix</title>
+    <!--Font awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="hotel.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav>
+                <a href="index.html"><img src="images/logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="hotel.html">Hotel</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login2.html" onclick="signOut()">Sign Out</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <!-- <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="" class="logo-image">
+                </a>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars open-state"></i>
+                    <i class="fas fa-times close-state"></i>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="hotel.html" class="nav-link">Hotel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav> -->
+        </div>
+    </header>
+    <main>
+        
+
+        <div class="container">
+            <div class="blog-post">
+                <div class="blog-post_img">
+                    <img src="images/intercontinental-jakarta-5616416343-2x1.jpeg" alt="">
+                </div>
+                <div class="blog-post_info">
+                    <h1 class="blog-post_title">InterContinental Jakarta</h1>
+                    <div class="blog-post_date">
+                        <span><i class="fas fa-map-marker-alt"></i>Pondok Indah, Jakarta</span>
+                    </div>
+                    <div class="hotel-rating">
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                    </div>
+                    <div class="point">
+                        <span class="nilai">Mengesankan - 8.9<span class="jumlah"> (891)</span></span>
+                    </div>
+
+                    <div class="price">
+                        <span>Rp1.600.000</span>
+                    </div>
+                    <a href="kamar.html" class="btn btn-gradient">View Hotel
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </a>
+                </div>
+            </div>
+            <div class="blog-post">
+                <div class="blog-post_img">
+                    <img src="images/room_1.jpg" alt="">
+                </div>
+                <div class="blog-post_info">
+                    <h1 class="blog-post_title">Hotel Bandung</h1>
+                    <div class="blog-post_date">
+                        <span><i class="fas fa-map-marker-alt"></i>Ciamis, Bandung</span>
+                    </div>
+                    <div class="hotel-rating">
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                    </div>
+                    <div class="point">
+                        <span class="nilai">Mengesankan - 8.7<span class="jumlah"> (851)</span></span>
+                    </div>
+
+                    <div class="price">
+                        <span>Rp1.200.000</span>
+                    </div>
+                    <a href="#" class="btn btn-gradient">View Hotel
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </a>
+                </div>
+            </div>
+            <div class="blog-post">
+                <div class="blog-post_img">
+                    <img src="images/room_2.jpg" alt="">
+                </div>
+                <div class="blog-post_info">
+                    <h1 class="blog-post_title">Hotel Yogyakarta</h1>
+                    <div class="blog-post_date">
+                        <span><i class="fas fa-map-marker-alt"></i>Malioboro, Yogyakarta</span>
+                    </div>
+                    <div class="hotel-rating">
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                    </div>
+                    <div class="point">
+                        <span class="nilai">Mengesankan - 9.0<span class="jumlah"> (920)</span></span>
+                    </div>
+
+                    <div class="price">
+                        <span>Rp1.000.000</span>
+                    </div>
+                    <a href="#" class="btn btn-gradient">View Hotel
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="blog-post">
+                <div class="blog-post_img">
+                    <img src="images/room_8.jpg" alt="">
+                </div>
+                <div class="blog-post_info">
+                    <span class="hotel-price">From $200/Night</span>
+                        <br>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star rating"></i>
+                            <i class="fas fa-star-half rating"></i>
+                        
+                    <h1 class="blog-post_title">Hotel Jakarta</h1>
+                    <p class="blog-post_text">
+                        Sunt consectetur ut laboris culpa reprehenderit eiusmod dolore aliquip velit consequat. 
+                        Voluptate eu consequat velit mollit occaecat tempor consequat do incididunt in dolor et veniam. 
+                        Veniam excepteur voluptate et et in labore commodo amet minim sunt elit non. 
+                        Do laborum et voluptate velit aute id nulla incididunt.                         
+                    </p>
+                    <a href="#" class="blog-post_cta">Book Now</a>
+                </div>
+            </div> -->
+
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-content-brand">
+                    <a href="index.html" class="logo">
+                        <img class=logo-image src="images/logo.png" alt="">
+                    </a>
+                    <div class="paragraph">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis autem velit ea ratione fugiat
+                        asperiores iste incidunt provident nemo nesciunt? Ipsam soluta error delectus ex fugit nihil,
+                        nostrum quo ut.
+                    </div>
+                </div>
+                <div class="social-media-wrap">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="social-media">
+                        <a href="#" class="sm-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="sm-link"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+    <script src="navbar.js">s</script>
+</body>
+
+</html>

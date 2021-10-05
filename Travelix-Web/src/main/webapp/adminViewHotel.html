@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelix - Admin</title>
+    <link rel="stylesheet" href="adminViewHotel.css ">
+    
+</head>
+<body>
+    <div class="table">
+        <table class="content-table">
+            <thead>
+                
+                    <th>Guest Name</th>
+                    <th>Email</th>
+                    <th>Room of Choice</th>
+                    <th>Phone</th>
+                    <th>Check-In Date</th>
+                    <th>Check-Out Date</th>
+                    <th>Type of Trip</th>
+                
+            </thead>
+            <tbody id="TblBooking">
+                
+            </tbody>
+        </table>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		        var firebaseConfig = {
+		    apiKey: "AIzaSyDRbu5Jg566T5GRkrO-p3xyHIYWJq1FVWU",
+		    authDomain: "travelix-4ea9d.firebaseapp.com",
+		    databaseURL: "https://travelix-4ea9d-default-rtdb.firebaseio.com",
+		    projectId: "travelix-4ea9d",
+		    storageBucket: "travelix-4ea9d.appspot.com",
+		    messagingSenderId: "948071702081",
+		    appId: "1:948071702081:web:5dbf6505ef9cd2de9cf0c0",
+		    measurementId: "G-RH82TXEWLM"
+		  };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="admin.js"></script>
+</body>
+
+</html>
